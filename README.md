@@ -38,16 +38,16 @@ for word in data.keys():
         l=endpoints.left, r=endpoints.right,M=1
     )
     models = [
-        ApexFixedTrapezoidalModel(apexes=[0,min(ra.data.right)]),
-        ApexFixedTrapezoidalModel(apexes=[max(ra.data.left),min(ra.data.right)]),
-        ApexFixedTrapezoidalModel(apexes=[max(ra.data.left),1]),
+        ApexFixedTrapezoidalModel(apexes=[0,min(lsf.data.right)]),
+        ApexFixedTrapezoidalModel(apexes=[max(lsf.data.left),min(ra.data.right)]),
+        ApexFixedTrapezoidalModel(apexes=[max(lsf.data.left),1]),
         LeftShoulderTrapezoidalModel(),
         SymmetricTriangularModel(),
         RightShoulderTrapezoidalModel(M=10),
     ]
     lsf.data_part()
     lsf.intrapersonal_model_select(models)
-    lsf_dict[word] = ra
+    lsf_dict[word] = lsf
 
 it2fs_dict = dict()
 for word in data.keys():
