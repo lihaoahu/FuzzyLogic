@@ -39,7 +39,7 @@ for word in data.keys():
     )
     models = [
         ApexFixedTrapezoidalModel(apexes=[0,min(lsf.data.right)]),
-        ApexFixedTrapezoidalModel(apexes=[max(lsf.data.left),min(ra.data.right)]),
+        ApexFixedTrapezoidalModel(apexes=[max(lsf.data.left),min(lsf.data.right)]),
         ApexFixedTrapezoidalModel(apexes=[max(lsf.data.left),1]),
         LeftShoulderTrapezoidalModel(),
         SymmetricTriangularModel(),
